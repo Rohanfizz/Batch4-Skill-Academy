@@ -59,8 +59,8 @@ function morrisTraversal(root){
             temp = temp.right;
         }else{
             let lrm = temp.left;
-            console.log(lrm.val);
-            while(lrm.right != null && lrm.right != temp) lrm =lrm.right;
+
+            while(lrm.right != null && lrm.right != temp) lrm = lrm.right;
             if(lrm.right == null){
                 // first time
                 preorder+=temp.val+", ";
@@ -76,6 +76,22 @@ function morrisTraversal(root){
     }
     console.log(preorder);
     console.log(inorder);
+}
+
+function ntrp(root,val){
+    if(root == null) return [];
+    if(root.val == val) return [root.val];
+    let leftAns = ntrp(root.left,val);
+    if(leftAns.length>0){
+        leftAns.push(root.val);
+        return leftAns;
+    }
+    let rightAns = ntrp(root.right,val);
+    if(rightAns.length>0){
+        rightAns.push(root.val);
+        return rightAns;
+    }
+    return [];
 }
 
 let root = constructTree(arr);
