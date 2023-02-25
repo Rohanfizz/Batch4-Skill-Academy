@@ -13,5 +13,14 @@ function getMazePaths(i,j,psf){
     //vertical
     getMazePaths(i-1,j,psf+"v");
 }
-
-getMazePaths(n,m,"");
+function mazePath(i,j,di,dj,psf){
+    if(i>di || j >dj) return;
+    if(i == di && j == dj){
+        console.log(psf);
+        return;
+    }
+    mazePath(i,j+1,di,dj,psf+"h");
+    mazePath(i+1,j,di,dj,psf+"v");
+}
+mazePath(1,1,2,3,"");
+// getMazePaths(n,m,"");
