@@ -21,7 +21,7 @@ class Stack {
             temp = temp.next;
             i++;
         }
-    }
+}
 
     displayLinkedList = function () {
         if (this.isEmpty()) {

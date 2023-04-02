@@ -143,7 +143,7 @@ class LinkedList {
         }
         return temp;
     };
-}
+}   
 
 let ll = new LinkedList([1, 2]);
 ll.displayLinkedList();
